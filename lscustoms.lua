@@ -83,8 +83,8 @@ isPlyInBennys = false
 
 
 Citizen.CreateThread(function()
-	local plyPed = PlayerPedId()
     while true do 
+    	local plyPed = GetPlayerPed(-1)
     	local sleep = 200
         if IsPedInAnyVehicle(plyPed, false) then
             local plyPos = GetEntityCoords(plyPed)
@@ -137,7 +137,7 @@ end)
 
 
 function enterLocation(locationsPos)
-    local plyPed = PlayerPedId()
+    local plyPed = GetPlayerPed(-1)
     local plyVeh = GetVehiclePedIsIn(plyPed, false)
     local isMotorcycle = false
 
@@ -666,8 +666,8 @@ end
 
 
 Citizen.CreateThread(function()
-	local playerPed = PlayerPedId()
 	while true do
+		local playerPed = GetPlayerPed(-1)
 		local sleep = 200
 
 		if IsPedInAnyVehicle(playerPed, false) then
